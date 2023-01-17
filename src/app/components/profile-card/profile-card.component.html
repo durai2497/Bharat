@@ -1,0 +1,50 @@
+<div class="profile-cards" #profileCard>
+
+      <div #Cards class="profile-card" (transitionend)="handleShift()" *ngFor="let card of cards; let i = index"
+          [ngStyle]="{ zIndex: cards.length - i, transform: 'scale(' + (20 - i) / 20 + ') translateY(-' + 20 * i + 'px)', padding: 0 - i }">
+          
+          <img #cardImage [src]="card.img" >
+           <div class="card-content">
+
+          <div class="tag" (click)="openProfile(card.title)">
+            <div class="verified">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>Verified 
+              </div>
+              <div class="premium">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>Premium NRI 
+              </div>
+          </div>
+          <div (click)="openProfile(card.title)">
+            <h3>{{ card?.title }}</h3>
+          </div>
+          <div class="p" (click)="openProfile(card.title)">
+           {{ card?.description }}
+          </div>
+            <hr class="hr">
+            <div class="user-action">
+                <div class="shortList" (click)="profileShortlist(i)">
+                    <ion-icon name="star-outline" *ngIf="!card.shortListed"></ion-icon>
+                    <ion-icon name="star" *ngIf="card.shortListed"></ion-icon>
+                    Shortlist
+                </div>
+                <div class="action-btn">
+                    <div class="like">
+                        Like her? 
+                    </div>
+                    <div class="close">
+                        <ion-button fill="outline" (click)="profileSelect($event,false)"> 
+                            <ion-icon name="close-outline"></ion-icon>
+                        </ion-button>
+                    </div>
+                    <div class="liked">
+                        <ion-button fill="solid" (click)="profileSelect($event,true)"> 
+                            <ion-icon name="checkmark-sharp"></ion-icon>
+                        </ion-button>
+                    </div>
+                </div>
+            </div>
+           </div>
+
+      </div>
+
+  </div>

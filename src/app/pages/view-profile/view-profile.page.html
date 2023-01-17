@@ -1,0 +1,99 @@
+<ion-content class="page-content-margin" [scrollEvents]="true" >
+  <ion-header translucent="true" slot="fixed" class="ion-no-border" >
+    <ion-toolbar>
+       <div class="header-align">
+      <!-- Back Button -->
+      <ion-buttons slot="start">
+        <ion-back-button color="white"
+        icon="arrow-back-outline"
+        mode="md" defaultHref=""></ion-back-button>
+      </ion-buttons>
+       <!-- Page Title -->
+      <ion-label class="page-title" color="black">
+          {{profileName}}
+      </ion-label>
+       </div>
+    </ion-toolbar>
+  </ion-header>
+ <ion-row class="profile-detail-page ion-no-padding ion-justify-content-center">
+    <ion-col size-xs="12" size-sm="6" size-md="6" size-lg="6" class="profile-content ion-no-padding">
+      <swiper *ngIf="profileImages.length!=0" [config]="sliderConfig" #swiperWrapper>
+        <ng-template swiperSlide *ngFor="let item of profileImages">
+          <ion-card class="profile-card v ion-no-margin"> 
+            <ion-row class="ion-no-padding">
+              <ion-col size="12" class="ad-img-container ion-no-padding">
+                <img [src]="item?.img" alt="bharatMatrimony_img" >
+              </ion-col>
+            </ion-row> 
+      </ion-card>
+        </ng-template>
+      </swiper> 
+      <div style="padding-top: 390px !important;">
+        <div class="card-content">
+          <div class="tag">
+            <div class="verified">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>Verified 
+              </div>
+              <div class="premium">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>Premium NRI 
+              </div>
+          </div>
+          <div>
+            <h3>{{ profileName}}</h3>
+          </div>
+          <div class="p" >
+            25Yrs, 5.ft 5 in, B.tech, Developer, 
+            Uthirattathi, Hindu, Kanyakumari,
+             Tamilnadu , India - 629163.
+          </div>
+          <div class="matchScore">
+            Match Score  80%
+          </div>
+          <div>
+            <ion-progress-bar value=".75" ></ion-progress-bar>
+          </div>
+          <div class="chips">
+            <ion-chip [outline]="true" color="dark">
+              <ion-icon name="star-outline" ></ion-icon>
+              <ion-label>Shortlist</ion-label>
+            </ion-chip>
+            <ion-chip [outline]="true" color="dark">
+              <ion-icon name="logo-whatsapp" color="success"></ion-icon>
+              <ion-label>WhatsApp</ion-label>
+            </ion-chip>
+            <ion-chip [outline]="true" color="dark">
+              <ion-icon name="call-outline"></ion-icon>
+              <ion-label>Call</ion-label>
+            </ion-chip>
+            <ion-chip [outline]="true" color="dark">
+              <ion-icon name="videocam-outline"></ion-icon>
+              <ion-label>Video</ion-label>
+            </ion-chip>
+            <ion-chip [outline]="true" color="dark">
+              <ion-icon name="chatbox-outline" ></ion-icon>
+              <ion-label>Message</ion-label>
+            </ion-chip>
+          </div>
+           <div class="sub-header">
+               About Him
+           </div>
+           <div class="details" *ngFor="let detail of aboutDetails">
+            <ion-icon name={{detail?.logoName}} color="success"></ion-icon>
+            <div class="detail-text">
+             {{detail?.desc}}
+            </div>
+           </div>
+           <div class="sub-header" style="padding-top: 0.5rem !important;">
+            His religious background
+           </div>
+           <div class="details" *ngFor="let detail of religiousDetails">
+            <ion-icon name={{detail?.logoName}} color="success"></ion-icon>
+            <div class="detail-text">
+             {{detail?.desc}}
+            </div>
+           </div>
+        </div>
+     </div>
+    </ion-col>
+  </ion-row>  
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-content >
+  <ion-header>
+    <ion-toolbar>
+       <div class="header-align">
+      <!-- Back Button -->
+      <ion-buttons slot="start">
+        <ion-button (click)="loadProfileCards()">
+          <ion-icon slot="icon-only" name="arrow-back-outline" ></ion-icon>
+        </ion-button>
+      </ion-buttons>
+       <!-- Page Title -->
+      <ion-label class="page-title" color="black">
+           Daily Recommendations
+      </ion-label>
+       </div>
+    </ion-toolbar>
+  </ion-header>
+     
+  <!-- profile card -->
+  <app-profile-card [cards]="cards"></app-profile-card>
+
+</ion-content>
+
+

@@ -1,0 +1,120 @@
+.profile-cards {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  top: 20%;
+  position: fixed;
+}
+
+.profile-card {
+  display: inline-block;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 5px;
+  position: absolute;
+  will-change: transform;
+  transition: all 0.3s ease-in-out;
+  width: 90%;
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: grab;
+  padding: 1rem;
+}
+
+.moving.profile-card {
+  transition: none;
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
+
+.profile-card img {
+  pointer-events: none;
+  opacity: 1;
+  width: 100%;
+  height: 60%;
+  transition: opacity 0.3s ease-in-out;
+  object-fit: fill;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.profile-card h3 {
+  margin-top: 5px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.profile-card .p {
+  font-size: 16px;
+  text-align: left;
+  margin-top: -6px;
+}
+.card-content {
+  padding: 0 1rem 0 1rem;
+  position: fixed;
+  width: 100%;
+}
+.tag {
+  display: flex;
+  padding-top: 1rem;
+  .verified {
+    color: #3f51b5;
+    padding-right: 0.5rem;
+    font-size: 12px;
+    ion-icon {
+      color: #3f51b5 !important;
+      padding-right: 0.2rem;
+    }
+  }
+  .premium {
+    color: #9c27b0;
+    font-size: 12px;
+    ion-icon {
+      color: #9c27b0;
+      padding-right: 0.2rem;
+    }
+  }
+}
+.hr {
+  border-top: 0.5px solid #c1c1c199 !important;
+}
+.user-action {
+  display: flow-root;
+  .shortList {
+    float: left;
+    text-align: left;
+    font-size: 15px;
+    line-height: 3.5;
+  }
+  .action-btn {
+    display: flex;
+    float: right;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 600;
+    .like {
+      line-height: 2.8;
+    }
+    .close {
+      ion-button {
+        --border-radius: 20px !important;
+        --border-color: #9e9e9e8a;
+        color: #ababab;
+      }
+    }
+    .liked {
+      ion-button {
+        --border-radius: 20px !important;
+        width: 115% !important;
+        color: white;
+        --background: #f48220;
+      }
+    }
+  }
+}

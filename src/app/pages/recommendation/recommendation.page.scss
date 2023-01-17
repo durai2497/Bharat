@@ -1,0 +1,30 @@
+ion-header {
+  position: relative !important;
+  z-index: 0 !important;
+}
+ion-toolbar {
+  height: calc(100vh - 50vh) !important;
+  --background: linear-gradient(
+    132deg,
+    #24eb86cf 20%,
+    #24eb86d1 50%,
+    #1afdbe 70%
+  ) !important;
+  .header-align {
+    padding-top: 2rem;
+    display: flex;
+    ion-icon {
+      color: whitesmoke !important;
+    }
+    .page-title {
+      line-height: 3;
+      font-size: 18px;
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
+
+ion-content {
+  --background: #e7e7e794 !important;
+}
